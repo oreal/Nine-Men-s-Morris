@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="NappulaEllipsi.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="NappulaEllipsi">
+    <UserControl.Resources>
+        <Style TargetType="Ellipse">
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Ellipse x:Name="NappulaEllips" StrokeThickness="5" >
+            <Ellipse.Stroke>
+                <Binding ElementName="NappulaEllipsi" Path="reunaVari" UpdateSourceTrigger="PropertyChanged" />
+            </Ellipse.Stroke>
+             <Ellipse.Fill>
+                <Binding ElementName="NappulaEllipsi" Path="Color" UpdateSourceTrigger="PropertyChanged"/>
+            </Ellipse.Fill> 
+            <Ellipse.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding e22_MouseLeftButtonDown}"/>
+            </Ellipse.InputBindings>
+        </Ellipse>
+
+    </Grid>
+</UserControl>
